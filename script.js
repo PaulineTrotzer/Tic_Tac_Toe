@@ -58,6 +58,10 @@ function render() {
 
 function handleCellClick(cell, index) {
     if (fields[index] == null) {
+        if(isGameFinished()){
+
+            return;
+        }
         if (currentPlayer === 'circle') {
             fields[index] = 'circle';
             cell.innerHTML = createAnimatedCircle();
@@ -72,6 +76,7 @@ function handleCellClick(cell, index) {
         if (isGameFinished()) {// nach jedem Onclick folgt die Prüfung//
             const winCombination = getWinningCombination();
             drawWinningLine(winCombination);
+            cell.onclick = null;
         }
 
     }
