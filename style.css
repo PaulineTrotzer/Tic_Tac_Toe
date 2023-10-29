@@ -15,6 +15,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 /* Stil für die Tabelle */
@@ -30,9 +31,9 @@ td {
   font-weight: bold;
 }
 
-td:hover{
-  background-color: rgba(255,255,255,0.3);
-  cursor:pointer;
+td:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
 }
 
 table td {
@@ -53,27 +54,52 @@ table tr td:last-child {
 
 /* CSS-Animation für den animierten Kreis */
 @keyframes fillCircle {
-    from {
-        stroke-dasharray: 0;
-    }
-    to {
-        stroke-dasharray: 188; /* Dieser Wert kann je nach gewünschter Geschwindigkeit angepasst werden */
-    }
+  from {
+    stroke-dasharray: 0;
+  }
+  to {
+    stroke-dasharray: 188; /* Dieser Wert kann je nach gewünschter Geschwindigkeit angepasst werden */
+  }
 }
-
 
 /* CSS-Animation für den animierten Kreis oder das animierte Kreuz */
 @keyframes fillShape {
-    from {
-        stroke-dasharray: 0;
-    }
-    to {
-        stroke-dasharray: 188; /* Dieser Wert kann je nach gewünschter Geschwindigkeit angepasst werden */
-    }
+  from {
+    stroke-dasharray: 0;
+  }
+  to {
+    stroke-dasharray: 188; /* Dieser Wert kann je nach gewünschter Geschwindigkeit angepasst werden */
+  }
 }
 
 /* Wende die Animation auf den Kreis oder das Kreuz an */
 .circle-fill,
 .cross-fill {
-    animation: fillCircle 0.95s linear;
+  animation: fillCircle 0.95s linear;
+}
+
+button {
+  display: block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: #00b0ef;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4fd0ff;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt-100{
+  margin-top: 100px;
 }
